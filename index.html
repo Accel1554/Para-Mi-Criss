@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10080f">
+<title>TE AMO MI CRISS ♡</title>
+<style>
+:root{--bg:#10080f;--pink:#ff77aa;--pale:#ffe5ef;--white:#fff9fc;--muted:#d8bdca}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#42152f 0%,var(--bg) 52%);color:var(--white);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit}
+#stars{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.spark{position:absolute;color:#ff9fc4;opacity:0;animation:floatUp linear infinite;text-shadow:0 0 12px #ff6ca8}
+@keyframes floatUp{0%{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.6}85%{opacity:.45}100%{transform:translateY(-12vh) rotate(35deg);opacity:0}}
+main{position:relative;z-index:1;max-width:760px;margin:auto;padding:26px 18px 70px}
+.hero{min-height:90svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px 0}
+.eyebrow{font:11px/1.6 Arial,sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#ffc2d8}
+.orb{width:96px;height:96px;border:1px solid #ff8db8;border-radius:50%;display:grid;place-items:center;margin:26px 0;box-shadow:0 0 45px #ff4d9630,inset 0 0 24px #ff4d9620;animation:pulse 3s ease-in-out infinite}
+.orb span{font-size:38px;color:#ff8db8}
+@keyframes pulse{50%{transform:scale(1.05);box-shadow:0 0 65px #ff4d9650}}
+h1{font-size:clamp(39px,10vw,72px);line-height:1.04;font-weight:normal;letter-spacing:.03em;margin:0;background:linear-gradient(120deg,#fff,#ffb8d2 55%,#fff);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:0 0 32px #ff80b31c}
+.subtitle{font-size:17px;color:var(--muted);font-style:italic;line-height:1.7;max-width:440px;margin:20px auto 26px}
+.btn{border:1px solid #ff8db8;color:#fff;background:#ff5f9b18;border-radius:999px;padding:14px 23px;cursor:pointer;transition:.25s;box-shadow:0 0 24px #ff5f9b12}
+.btn:hover{background:#ff5f9b35;transform:translateY(-2px)}
+section{padding:48px 0;text-align:center}
+.kicker{font:10px Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--pink)}
+h2{font-size:clamp(29px,7vw,43px);font-weight:normal;margin:13px 0 22px}
+.letter{border:1px solid #ff9ec526;background:linear-gradient(145deg,#ffffff09,#ff79ae08);padding:25px 21px;border-radius:20px;text-align:left;line-height:1.95;color:#f9e8ef;box-shadow:0 20px 70px #0002}
+.letter p{margin:0 0 15px}
+.reveal{opacity:0;transform:translateY(15px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:25px}
+.photo{min-height:185px;border-radius:15px;overflow:hidden;position:relative;border:1px solid #ff9ec52b;background:linear-gradient(135deg,#53233f,#20101d);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:#ffe1ed;font:12px Arial,sans-serif;letter-spacing:.04em}
+.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.photo span{position:relative;z-index:1;text-shadow:0 2px 8px #000}
+.note{font:12px/1.7 Arial,sans-serif;color:#c9aeba;margin-top:14px}
+.musicbar{position:fixed;right:15px;bottom:15px;z-index:4;background:#1a0d17eF;border:1px solid #ff8db84a;border-radius:999px;padding:8px 13px;display:flex;align-items:center;gap:9px;backdrop-filter:blur(10px)}
+.musicbar button{border:0;background:none;color:#ffe3ee;cursor:pointer;font-size:14px}
+footer{text-align:center;padding:45px 0 15px;color:#c9aeba;font-style:italic;line-height:1.8}
+.final{font-size:clamp(34px,9vw,60px);color:#ff9fc4;line-height:1.2;text-shadow:0 0 32px #ff5f9b2e}
+.small{font:10px Arial,sans-serif;letter-spacing:.22em;color:#c9aeba;text-transform:uppercase}
+@media(min-width:600px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{min-height:230px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div>
+<main>
+  <header class="hero">
+    <div class="eyebrow">Un pequeño universo hecho para ti</div>
+    <div class="orb"><span>♡</span></div>
+    <h1>Para mi<br>Criss</h1>
+    <p class="subtitle">Hay personas que llegan a tu vida y, sin darse cuenta, se convierten en tu lugar favorito.</p>
+    <button class="btn" id="openLetter">Abre tu sorpresa ♡</button>
+    <p class="small" style="margin-top:24px">Hecho con amor, solo para ti</p>
+  </header>
+
+  <section id="carta">
+    <div class="kicker">Desde mi corazón</div>
+    <h2>Una carta para ti</h2>
+    <div class="letter reveal" id="letterText">
+      <p>Mi Criss,</p>
+      <p>No sé si estas palabras alcancen para explicar todo lo que siento por ti, pero quiero intentarlo. Desde que llegaste a mi vida, hay momentos simples que se volvieron especiales solo porque estás en ellos.</p>
+      <p>Tu sonrisa, tu forma de ser y cada recuerdo que construimos tienen un lugar muy bonito dentro de mí. No necesito que todos los días sean perfectos; me basta con seguir compartiendo contigo los días buenos, los difíciles y todos los pequeños momentos que hacen que lo nuestro sea nuestro.</p>
+      <p>Si pudiera pedir algo, sería seguir creando recuerdos a tu lado, hacerte reír cuando lo necesites y recordarte siempre lo importante que eres para mí.</p>
+      <p>Gracias por ser tú. Esta página es pequeñita comparada con todo lo que quisiera darte, pero cada detalle está aquí para recordarte algo:</p>
+      <p style="text-align:center;color:#ff9fc4;font-size:25px;margin:22px 0">TE AMO MI CRISS ♡</p>
+      <p>Con todo mi cariño,<br>alguien que te elige una y otra vez.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Nuestros momentos</div>
+    <h2>Pequeños recuerdos, amor infinito</h2>
+    <p class="subtitle">Reemplaza estos espacios con tus fotos favoritas de ustedes dos.</p>
+    <div class="gallery">
+      <div class="photo"><span>♡<br>Agrega foto 1</span></div>
+      <div class="photo"><span>♡<br>Agrega foto 2</span></div>
+      <div class="photo"><span>♡<br>Agrega foto 3</span></div>
+      <div class="photo"><span>♡<br>Agrega foto 4</span></div>
+      <div class="photo"><span>♡<br>Agrega foto 5</span></div>
+      <div class="photo"><span>♡<br>Agrega foto 6</span></div>
+    </div>
+    <p class="note">Tus fotos son privadas solo si tú controlas dónde publicas la página y los archivos. Una web pública puede ser vista por otras personas.</p>
+  </section>
+
+  <section>
+    <div class="kicker">Y si algún día lo olvidas...</div>
+    <h2 class="final reveal">Eres mi persona favorita.</h2>
+    <p class="subtitle reveal">Hoy, mañana y en cada pequeño instante que la vida nos regale.</p>
+    <div class="orb" style="margin:25px auto"><span>♥</span></div>
+    <div class="small">TE AMO MI CRISS</div>
+  </section>
+  <footer>Con amor, para ti. <span style="color:#ff9fc4">♡</span></footer>
+</main>
+
+<div class="musicbar">
+  <span aria-hidden="true">♫</span>
+  <button id="musicToggle" type="button">Reproducir música</button>
+</div>
+<audio id="song" loop preload="none">
+  <!-- Guarda una canción que tengas derecho a usar como "musica.mp3" junto a index.html -->
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const stars = document.getElementById('stars');
+for(let i=0;i<22;i++){
+  const s=document.createElement('span');
+  s.className='spark'; s.textContent=Math.random()>.45?'♡':'✦';
+  s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(12+Math.random()*18)+'s';
+  s.style.animationDelay=(-Math.random()*25)+'s';
+  s.style.fontSize=(10+Math.random()*16)+'px';
+  stars.appendChild(s);
+}
+const letter=document.getElementById('letterText');
+document.getElementById('openLetter').addEventListener('click',()=>{
+  letter.classList.add('visible');
+  document.getElementById('carta').scrollIntoView({behavior:'smooth'});
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const song=document.getElementById('song');
+const musicToggle=document.getElementById('musicToggle');
+musicToggle.addEventListener('click',async()=>{
+  if(song.paused){
+    try{await song.play();musicToggle.textContent='Pausar música'}
+    catch(e){musicToggle.textContent='Añade musica.mp3 primero'}
+  }else{song.pause();musicToggle.textContent='Reproducir música'}
+});
+</script>
+</body>
+</html>
